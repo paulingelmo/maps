@@ -11,3 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
+loneliest.js
+app.js
