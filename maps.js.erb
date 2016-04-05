@@ -1,11 +1,11 @@
-$('body.commuters.profile').ready(function() {
+$('body').ready(function() {
   console.log('maps.js.erb loaded');
 
   // INITIALIZE MAP, APPLY BIKE LAYER AND DIRECTIONS DISPLAY
   function initMap() {
     console.log('initMap called');
 
-    var map = new google.maps.Map(document.getElementById('map_fave'), {
+    var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 25.77, lng: -80.20},
       zoom: 12
     });
@@ -17,7 +17,7 @@ $('body.commuters.profile').ready(function() {
   function requestDirections() {
     console.log('rD start');
 
-    var map = new google.maps.Map(document.getElementById('map_fave'), {
+    var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 25.77, lng: -80.20},
       zoom: 12
     });
@@ -26,7 +26,7 @@ $('body.commuters.profile').ready(function() {
 
     var directionsDisplay = new google.maps.DirectionsRenderer;
     directionsDisplay.setMap(map);
-    directionsDisplay.setPanel(document.getElementById('directions_fave'));
+    directionsDisplay.setPanel(document.getElementById('directions'));
 
     var directionService = new google.maps.DirectionsService();
     var start = "<%= $start_pt %>";
